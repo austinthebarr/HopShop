@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   
@@ -21,7 +21,7 @@ const Welcome = () => {
 `}</style>
       <div className='center'>
         <h1 className='style'>Welcome to HOPSHOP</h1>
-        <button>Enter</button>
+        <button><Link to='/offerings'>Enter</Link></button>
       </div>
     </div>
   );

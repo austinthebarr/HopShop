@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Welcome from './Welcome';
+import KegList from './KegList';
 
 const App = () => {
   var style = {
@@ -11,13 +12,15 @@ const App = () => {
     left: '0',
     top: '0',
     display: 'flex'
-  }
+  };
   return (
     <div>
       <Switch>
         <div style ={style}>
-          <Route path='/'
+          <Route exact path='/'
             component={Welcome} />
+          <Route path='/offerings'
+             component={KegList} /> 
         </div>
       </Switch>
     </div>

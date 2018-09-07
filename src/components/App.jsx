@@ -6,22 +6,32 @@ import KegList from './KegList';
 
 const App = () => {
   var style = {
-    position: 'absolute',
-    width: '100%',
-    height:' 100%',
-    left: '0',
-    top: '0',
-    display: 'flex',
-    marginTop: '50px'
+   
   };
   return (
     <div>
+      <style jsx>{`
+      .everyPage {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;    
+      }
+      .headerMargin{
+        margin-top: 90px;
+        display: grid;
+      }
+      `}</style>
       <Switch>
-        <div style ={style}>
+        <div className='everyPage'>
           <Route exact path='/'
             component={Welcome} />
-          <Route path='/offerings'
-            component={KegList} /> 
+          <div className='headerMargin'>   
+            <Route path='/offerings'
+              component={KegList} /> 
+          </div>  
         </div>
       </Switch>
     </div>

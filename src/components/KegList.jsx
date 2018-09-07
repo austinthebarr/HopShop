@@ -57,7 +57,8 @@ const masterKegList = [
 const KegList = () => {
   return (
     <div>
-      <Header />
+      <Header 
+      title='Beer Selection'/>
       <div className='container flex'>
         <style jsx>{`
     .flex{
@@ -65,22 +66,22 @@ const KegList = () => {
     justify-content: space-between;
     flex-wrap: wrap;
     background-image: url(${Beer});
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 1500px;
     height: 100%;
     }
     `}</style>
       
         {masterKegList.map((keg, index) =>
-          <div>
-            <Keg 
-              brew={keg.brew}
-              brewery={keg.brewery}
-              type={keg.type}
-              abv={keg.abv}
-              price={keg.price}
-              availble={keg.availble}
-              key={index}/>
-          </div>  
+          <Keg 
+            brew={keg.brew}
+            brewery={keg.brewery}
+            type={keg.type}
+            abv={keg.abv}
+            price={keg.price}
+            availble={keg.availble}
+            key={index}/>
         )}
       </div>
     </div> 

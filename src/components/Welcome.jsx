@@ -21,7 +21,7 @@ const Welcome = () => {
 `}</style>
       <div className='center'>
         <h1 className='style'>Welcome to HOPSHOP</h1>
-        <button className=' btn btn-danger'><Link to='/offerings'>Enter</Link></button>
+        <Link to='/offerings'><button className=' btn btn-danger'>Enter</button></Link>
       </div>
     </div>
   );

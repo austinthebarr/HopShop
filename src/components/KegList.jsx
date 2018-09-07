@@ -5,7 +5,7 @@ const masterKegList = [
   {
     brew: 'Ruby Zozzle',
     brewery: 'Hi-Wheel',
-    description: 'Sparkling Wine & Grapefruit',
+    type: 'Sparkling Wine & Grapefruit',
     abv: '6.8%',
     price: '7',
     availble: '20'
@@ -13,7 +13,7 @@ const masterKegList = [
   {
     brew: 'Tart N Juicy',
     brewery: 'Epic',
-    description: 'Sour IPA',
+    type: 'Sour IPA',
     abv: '4.5%',
     price: '6',
     availble: '60'
@@ -21,7 +21,7 @@ const masterKegList = [
   {
     brew: 'Hamm\'s',
     brewery: 'Miller/Coors',
-    description: 'American Lager',
+    type: 'American Lager',
     abv: '4.7%',
     price: '3',
     availble: '65'
@@ -29,7 +29,7 @@ const masterKegList = [
   {
     brew: 'Prismatic',
     brewery: 'Ninkasi',
-    description: 'Juicy IPA',
+    type: 'Juicy IPA',
     abv:  '5.9%',
     price: '6',
     availble: '75'
@@ -37,7 +37,7 @@ const masterKegList = [
   {
     brew: 'Juicy Haze',
     brewery: 'New Belgium',
-    description: 'India Pale Ale',
+    type: 'India Pale Ale',
     abv:  '7.5%',
     price: '6',
     availble: '18'
@@ -45,7 +45,7 @@ const masterKegList = [
   {
     brew: '8 Hop',
     brewery: 'New Belgium',
-    description: 'Pale Ale',
+    type: 'Pale Ale',
     abv:  '5.5%',
     price: '6',
     availble: '58'
@@ -59,8 +59,10 @@ const KegList = () => {
         <Keg 
           brew={keg.brew}
           brewery={keg.brewery}
-          abv={keg.price}
-          price={keg.availble}
+          type={keg.type}
+          abv={keg.abv}
+          price={keg.price}
+          availble={keg.availble}
           key={index}/>
       )}
     </div>

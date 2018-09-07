@@ -6,7 +6,7 @@ import KegList from './KegList';
 
 const App = () => {
   var style = {
-    position: 'fixed',
+    position: 'absolute',
     width: '100%',
     height:' 100%',
     left: '0',
@@ -20,7 +20,7 @@ const App = () => {
           <Route exact path='/'
             component={Welcome} />
           <Route path='/offerings'
-             component={KegList} /> 
+            component={KegList} /> 
         </div>
       </Switch>
     </div>

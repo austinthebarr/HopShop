@@ -11,7 +11,8 @@ const App = () => {
     height:' 100%',
     left: '0',
     top: '0',
-    display: 'flex'
+    display: 'flex',
+    marginTop: '50px'
   };
   return (
     <div>

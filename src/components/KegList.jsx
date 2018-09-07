@@ -65,6 +65,8 @@ const KegList = () => {
     justify-content: space-between;
     flex-wrap: wrap;
     background-image: url(${Beer});
+    max-width: 1500px;
+    height: 100%;
     }
     `}</style>
       

@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Welcome from './Welcome';
 import KegList from './KegList';
+import Error404 from './Error404';
 
 const App = () => {
   var style = {
@@ -29,10 +30,14 @@ const App = () => {
           <Route exact path='/'
             component={Welcome} />
           <div className='headerMargin'>   
-            <Route path='/offerings'
+            <Route exact path='/offerings'
               component={KegList} /> 
-          </div>  
+          </div> 
         </div>
+       <div>
+            <Route component={Error404}/>
+          </div>
+      
       </Switch>
     </div>
   );

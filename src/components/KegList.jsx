@@ -58,7 +58,7 @@ const KegList = () => {
   return (
     <div>
       <Header 
-      title='Beer Selection'/>
+        title='Beer Selection'/>
       <div className='container flex'>
         <style jsx>{`
     .flex{

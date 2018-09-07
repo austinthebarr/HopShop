@@ -1,5 +1,6 @@
 import React from 'react';
 import Keg from './Keg';
+import Header from './Header';
 import Beer from '../assets/images/beer.jpeg';
 
 const masterKegList = [
@@ -55,9 +56,10 @@ const masterKegList = [
 
 const KegList = () => {
   return (
-    
-    <div className='container flex'>
-      <style jsx>{`
+    <div>
+      <Header />
+      <div className='container flex'>
+        <style jsx>{`
     .flex{
     display: flex;
     justify-content: space-between;
@@ -65,19 +67,21 @@ const KegList = () => {
     background-image: url(${Beer});
     }
     `}</style>
-      {masterKegList.map((keg, index) =>
-        <div>
-          <Keg 
-            brew={keg.brew}
-            brewery={keg.brewery}
-            type={keg.type}
-            abv={keg.abv}
-            price={keg.price}
-            availble={keg.availble}
-            key={index}/>
-        </div>  
-      )}
-    </div>
+      
+        {masterKegList.map((keg, index) =>
+          <div>
+            <Keg 
+              brew={keg.brew}
+              brewery={keg.brewery}
+              type={keg.type}
+              abv={keg.abv}
+              price={keg.price}
+              availble={keg.availble}
+              key={index}/>
+          </div>  
+        )}
+      </div>
+    </div> 
   );
 };
 

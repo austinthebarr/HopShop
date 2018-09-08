@@ -9,25 +9,23 @@ import KegList from './KegList';
 import Error404 from './Error404';
 
 const App = ({ location }) => {
-  console.log({ location })
   return (
     
     <Wrapper>
       <TransitionGroup>
         <CSSTransition
           key={location.pathname}
-          
           timeout={{ enter: 300, exit: 300 }}
-          classNames={'fade'}
-        >
-          <Switch location={location}>
-          
-            <Route exact path='/'
-              component={Welcome} />
-            <Route exact path='/offerings'
-              component={KegList} />  
-            <Route component={Error404}/>
-          </Switch>
+          classNames={'fade'}>
+          <section className="route-section">
+            <Switch location={location}>
+              <Route exact path='/'
+                component={Welcome} />
+              <Route exact path='/offerings'
+                component={KegList} />  
+              <Route component={Error404}/>
+            </Switch>
+          </section>
         </CSSTransition>
       </TransitionGroup>
     </Wrapper>
@@ -51,6 +49,17 @@ const Wrapper = styled.div`
 .fade-exit.fade-exit-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+
+div.transition-group {
+  position: relative;
+}
+
+section.route-section {
+position: absolute;
+width: 100%;
+top: 0;
+left: 0;
 }
 `;
 

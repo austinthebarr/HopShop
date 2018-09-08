@@ -56,20 +56,20 @@ const masterKegList = [
 
 const KegList = () => {
   return (
-    <div className='everyPage'>
+    <div className=''>
       <Header 
         title='Beer Selection'/>
-      <div className='container flex '>
+      <div className='container flex'>
         <style jsx>{`
           .flex{
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
           background-image: url(${Beer});
-          background-repeat: no-repeat;
           background-size: cover;
+          background-repeat: no-repeat;
           max-width: 1500px;
-          height: 100%;
+          height: 100vh;
           margin-top: 90px;
           }
           `}</style>

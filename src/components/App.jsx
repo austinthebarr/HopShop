@@ -3,7 +3,6 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
-
 import Welcome from './Welcome';
 import KegList from './KegList';
 import Error404 from './Error404';
@@ -57,7 +56,8 @@ div.transition-group {
 
 section.route-section {
 position: absolute;
-width: 100%;
+width: 100vw;
+height: 100vh;
 top: 0;
 left: 0;
 }

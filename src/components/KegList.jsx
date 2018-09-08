@@ -56,22 +56,23 @@ const masterKegList = [
 
 const KegList = () => {
   return (
-    <div>
+    <div className='everyPage'>
       <Header 
         title='Beer Selection'/>
-      <div className='container flex'>
+      <div className='container flex '>
         <style jsx>{`
-    .flex{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-image: url(${Beer});
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 1500px;
-    height: 100%;
-    }
-    `}</style>
+          .flex{
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          background-image: url(${Beer});
+          background-repeat: no-repeat;
+          background-size: cover;
+          max-width: 1500px;
+          height: 100%;
+          margin-top: 90px;
+          }
+          `}</style>
       
         {masterKegList.map((keg, index) =>
           <Keg 

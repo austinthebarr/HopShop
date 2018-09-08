@@ -7,16 +7,21 @@ const Welcome = () => {
   return(
     <div className='splash'>
       <style jsx>{`
+    
+        @import url('https://fonts.googleapis.com/css?family=Righteous');
+     
     .splash {
       background-color: #41463D;
       color: #FFF;
-      font-family: Monospace;
+      font-family: 'Righteous', cursive;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       text-align: center;
+      background: cover;
+      
     }
     .center {
-      margin-top: 25%
+      padding-top: 25%
     }  
 `}</style>
       <div className='center'>

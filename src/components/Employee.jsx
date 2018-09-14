@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import KegForm from './KegForm';
 
-const Employee = () => {
-  return(<h1>Empolyeee</h1>);
+const Employee = (props) => {
+  return(<KegForm onAddingKegToList={props.onAddingKegToList}/>);
 };
 
+Employee.propTypes = {
+  onAddingKegToList: PropTypes.func.isRequired
+};
 export default Employee;

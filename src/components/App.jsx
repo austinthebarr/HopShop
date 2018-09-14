@@ -17,7 +17,15 @@ class App extends React.Component {
     this.state = {
       masterTapList: {},
     };
+    this.handleAddingKegToList = this.handleAddingKegToList.bind(this);
   }
+  
+  handleAddingKegToList(newKeg){
+    let newKegId = v4();
+    let newMasterTapList = Object.assign({}, this.state.masterTapList, {[newKegId]: newKeg});  
+    this.setState({ masterTapList : newMasterTapList});
+  }
+
   render(){
     return (
       <Wrapper>
@@ -32,7 +40,7 @@ class App extends React.Component {
                   component={Welcome} />
                 <Route exact path='/offerings'
                   component={KegList} />  
-                <Route exact path='/BarKeeper' component={Employee}/> 
+                <Route exact path='/BarKeeper' render={ ()=> <Employee onAddingKegToList = {this.handleAddingKegToList}/> }/> 
                 <Route component={Error404}/>
               </Switch>
             </section>

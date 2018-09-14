@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import Welcome from './Welcome';
 import KegList from './KegList';
 import Error404 from './Error404';
+import Employee from './Employee';
 
 class App extends React.Component {
 
@@ -30,6 +31,7 @@ class App extends React.Component {
                   component={Welcome} />
                 <Route path='/offerings'
                   component={KegList} />  
+                 <Route path='/BarKeeper' component={Employee}/> 
                 <Route component={Error404}/>
               </Switch>
             </section>

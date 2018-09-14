@@ -55,7 +55,7 @@ const masterKegList = [
   }
 ];
 
-const KegList = () => {
+const KegList = (props) => {
   return (
     <div className=''>
       <Header 
@@ -91,7 +91,7 @@ const KegList = () => {
 };
 
 KegList.propTypes = {
-  KegList: PropTypes.object,
-}
+  KegList: PropTypes.object
+};
 
 export default KegList;

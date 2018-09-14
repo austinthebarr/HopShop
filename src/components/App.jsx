@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import {v4} from 'uuid';
 
 import Welcome from './Welcome';
 import KegList from './KegList';
@@ -29,9 +30,9 @@ class App extends React.Component {
               <Switch location={this.props.location}>
                 <Route exact path='/'
                   component={Welcome} />
-                <Route path='/offerings'
+                <Route exact path='/offerings'
                   component={KegList} />  
-                 <Route path='/BarKeeper' component={Employee}/> 
+                <Route exact path='/BarKeeper' component={Employee}/> 
                 <Route component={Error404}/>
               </Switch>
             </section>

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Keg from './Keg';
 import Header from './Header';
 import Beer from '../assets/images/beer.jpeg';
@@ -21,7 +23,6 @@ const masterKegList = [
     availble: '60'
   },
   {
-    brew: 'Hamm\'s',
     brewery: 'Miller/Coors',
     type: 'American Lager',
     abv: '4.7%',
@@ -88,5 +89,9 @@ const KegList = () => {
     </div> 
   );
 };
+
+KegList.propTypes = {
+  KegList: PropTypes.object,
+}
 
 export default KegList;

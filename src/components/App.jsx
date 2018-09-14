@@ -2,34 +2,43 @@ import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Welcome from './Welcome';
 import KegList from './KegList';
 import Error404 from './Error404';
 
-const App = ({ location }) => {
-  return (
-    
-    <Wrapper>
-      <TransitionGroup>
-        <CSSTransition
-          key={location.pathname}
-          timeout={{ enter: 300, exit: 300 }}
-          classNames={'fade'}>
-          <section className="route-section">
-            <Switch location={location}>
-              <Route exact path='/'
-                component={Welcome} />
-              <Route exact path='/offerings'
-                component={KegList} />  
-              <Route component={Error404}/>
-            </Switch>
-          </section>
-        </CSSTransition>
-      </TransitionGroup>
-    </Wrapper>
-  );
-};
+class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      masterTapList: {},
+    };
+  }
+  render(){
+    return (
+      <Wrapper>
+        <TransitionGroup>
+          <CSSTransition
+            key={this.props.location.pathname}
+            timeout={{ enter: 300, exit: 300 }}
+            classNames={'fade'}>
+            <section className="route-section">
+              <Switch location={this.props.location}>
+                <Route exact path='/'
+                  component={Welcome} />
+                <Route path='/offerings'
+                  component={KegList} />  
+                <Route component={Error404}/>
+              </Switch>
+            </section>
+          </CSSTransition>
+        </TransitionGroup>
+      </Wrapper>
+    );
+  }
+}
 
 const Wrapper = styled.div`
 .fade-enter {
@@ -63,6 +72,9 @@ left: 0;
 }
 `;
 
+App.propTypes = {
+  location: PropTypes.object
+};
 
 
 export default withRouter(App);

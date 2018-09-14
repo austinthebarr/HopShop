@@ -82,12 +82,10 @@ class App extends React.Component {
   }
 
   handleHidingForm(){
-    console.log(this.state.hideForm)
     this.setState({hideForm: true});
   }
 
   handleShowingForm(){
-    console.log(this.state.hideForm)
     this.setState({hideForm: false});
   }
 
@@ -111,7 +109,8 @@ class App extends React.Component {
                     kegListToDisplay={this.state.masterTapList} 
                     location={this.props.location.pathname}
                     onShowingForm={this.handleShowingForm}
-                    onHidingForm={this.handleHidingForm}/> }/> 
+                    onHidingForm={this.handleHidingForm}
+                    valueOfHideForm={this.state.hideForm}/> }/> 
                 <Route component={Error404}/>
               </Switch>
             </section>

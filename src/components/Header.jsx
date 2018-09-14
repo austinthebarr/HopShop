@@ -48,10 +48,10 @@ const Header = (props) => {
           <Link to='/' className='removeDecoration'>Home</Link>
         </li>
         <li className="nav-item removeDecoration">
-          <a onClick={props.onShowingForm}>Form</a>
+          <a onClick={props.onShowingForm}>Add A New Keg</a>
         </li>
         <li className="nav-item removeDecoration">
-          <a onClick={props.onHidingForm}>List</a>
+          <a onClick={props.onHidingForm}>Keg List</a>
         </li>
       </ul>
     </div> ; 

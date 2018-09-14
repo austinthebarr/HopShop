@@ -22,7 +22,7 @@ class App extends React.Component {
           type: 'Sparkling Wine & Grapefruit',
           abv: '6.8%',
           price: '7',
-          availble: '20'
+          available: '20'
         },
         '2': {
           brew: 'Tart N Juicy',
@@ -30,14 +30,15 @@ class App extends React.Component {
           type: 'Sour IPA',
           abv: '4.5%',
           price: '6',
-          availble: '60'
+          available: '60'
         },
         '3': {
+          brew: 'High Life',
           brewery: 'Miller/Coors',
           type: 'American Lager',
           abv: '4.7%',
           price: '3',
-          availble: '65'
+          available: '65'
         },
         '4': {
           brew: 'Prismatic',
@@ -45,7 +46,7 @@ class App extends React.Component {
           type: 'Juicy IPA',
           abv:  '5.9%',
           price: '6',
-          availble: '75'
+          available: '75'
         },
         '5': {
           brew: 'Juicy Haze',
@@ -53,7 +54,7 @@ class App extends React.Component {
           type: 'India Pale Ale',
           abv:  '7.5%',
           price: '6',
-          availble: '18'
+          available: '18'
         },
         '6': {
           brew: '8 Hop',
@@ -61,7 +62,7 @@ class App extends React.Component {
           type: 'Pale Ale',
           abv:  '5.5%',
           price: '6',
-          availble: '58'
+          available: '58'
         }
       },
     };
@@ -87,7 +88,7 @@ class App extends React.Component {
                 <Route exact path='/'
                   component={Welcome} />
                 <Route exact path='/offerings'
-                  component={KegList} />  
+                  render={ () => <KegList kegListToDisplay={this.state.masterTapList} barKeeper={this.props.location}/>} /> 
                 <Route exact path='/BarKeeper' render={ ()=> <Employee onAddingKegToList = {this.handleAddingKegToList}/> }/> 
                 <Route component={Error404}/>
               </Switch>

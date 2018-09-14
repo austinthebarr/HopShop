@@ -16,7 +16,7 @@ const Keg = (props) => {
         <p className="card-text">Type: {props.type}</p>
         <p className="card-text">ABV: {props.abv}</p>
         <p className="card-text">Price: ${props.price}</p>
-        <p className="card-text">Amount: {props.availble}</p>
+        <p className="card-text">Amount: {props.available}</p>
       </div>
     </div>
   );
@@ -28,7 +28,7 @@ Keg.propTypes = {
   type: PropTypes.string.isRequired,
   abv: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  availble: PropTypes.string.isRequired
+  available: PropTypes.string.isRequired
 };
 
 export default Keg;

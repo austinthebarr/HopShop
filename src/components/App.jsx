@@ -88,8 +88,8 @@ class App extends React.Component {
                 <Route exact path='/'
                   component={Welcome} />
                 <Route exact path='/offerings'
-                  render={ () => <KegList kegListToDisplay={this.state.masterTapList} barKeeper={this.props.location}/>} /> 
-                <Route exact path='/BarKeeper' render={ ()=> <Employee onAddingKegToList = {this.handleAddingKegToList}/> }/> 
+                  render={ () => <KegList kegListToDisplay={this.state.masterTapList}/>} /> 
+                <Route exact path='/BarKeeper' render={ ()=> <Employee onAddingKegToList = {this.handleAddingKegToList} kegListToDisplay={this.state.masterTapList} location={this.props.location.pathname}/> }/> 
                 <Route component={Error404}/>
               </Switch>
             </section>

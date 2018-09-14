@@ -21,41 +21,66 @@ const KegForm = (props) => {
 
   }
   return(
-    <div>
+  
+    <div className=''>
       <form onSubmit={handleAddingANewKegToList}>
-        <input
-          type='text'
-          id='brew'
-          placeholder='brew'
-          ref={(input) => {_brew = input;}}/>
-        <input
-          type='text'
-          id='brewery'
-          placeholder='brewery'
-          ref={(input) => {_brewery = input;}}/>
-        <input
-          type='text'
-          id='type'
-          placeholder='type'
-          ref={(input) => {_type = input;}}/>
-        <input
-          type='text'
-          id='abv'
-          placeholder='abv'
-          ref={(input) => {_abv = input;}}/>
-        <input
-          type='text'
-          id='price'
-          placeholder='price'
-          ref={(input) => {_price = input;}}/>
-        <input
-          type='number'
-          id='available'
-          placeholder='available'
-          ref={(input) => {_available = input;}}/>
-        <button className='btn btn-danger' type='submit'>Add New Keg</button>
+        <div className='form-row'>
+          <div className='col-md-4'>
+            <input 
+              className='form-control'
+              type='text'
+              id='brew'
+              placeholder='brew'
+              ref={(input) => {_brew = input;}}/>
+          </div>   
+          <div className='col-md-4'>
+            <input
+              className='form-control'
+              type='text'
+              id='brewery'
+              placeholder='brewery'
+              ref={(input) => {_brewery = input;}}/>
+          </div>
+        
+          <div className='col-md-4'>
+            <input
+              className='form-control col'
+              type='text'
+              id='type'
+              placeholder='type'
+              ref={(input) => {_type = input;}}/>
+          </div>
+          <div className='col-md-4'>
+            <input
+              className='form-control col'
+              type='text'
+              id='abv'
+              placeholder='abv'
+              ref={(input) => {_abv = input;}}/>
+          </div>
+          <div className='col-md-4'>
+            <input
+              className='form-control'
+              type='text'
+              id='price'
+              placeholder='price'
+              ref={(input) => {_price = input;}}/>
+          </div>
+          <div className='col-md-3'>
+            <input
+              className='form-control'
+              type='number'
+              id='available'
+              placeholder='available'
+              ref={(input) => {_available = input;}}/>
+          </div> 
+          <div className='col-md-3'>
+            <button className='btn btn-danger' type='submit'>Add New Keg</button>
+          </div>
+        </div> 
       </form>
     </div>
+  
   );
 };
 

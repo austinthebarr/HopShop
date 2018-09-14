@@ -65,14 +65,30 @@ class App extends React.Component {
           available: '58'
         }
       },
+
+      hideForm: true
+
     };
     this.handleAddingKegToList = this.handleAddingKegToList.bind(this);
+    this.handleHidingForm = this.handleHidingForm.bind(this);
+    this.handleShowingForm = this.handleShowingForm.bind(this);
   }
   
+ 
   handleAddingKegToList(newKeg){
     let newKegId = v4();
     let newMasterTapList = Object.assign({}, this.state.masterTapList, {[newKegId]: newKeg});
     this.setState({ masterTapList : newMasterTapList});
+  }
+
+  handleHidingForm(){
+    console.log(this.state.hideForm)
+    this.setState({hideForm: true});
+  }
+
+  handleShowingForm(){
+    console.log(this.state.hideForm)
+    this.setState({hideForm: false});
   }
 
   render(){
@@ -89,7 +105,13 @@ class App extends React.Component {
                   component={Welcome} />
                 <Route exact path='/offerings'
                   render={ () => <KegList kegListToDisplay={this.state.masterTapList}/>} /> 
-                <Route exact path='/BarKeeper' render={ ()=> <Employee onAddingKegToList = {this.handleAddingKegToList} kegListToDisplay={this.state.masterTapList} location={this.props.location.pathname}/> }/> 
+                <Route exact path='/BarKeeper' 
+                  render={ ()=> <Employee 
+                    onAddingKegToList = {this.handleAddingKegToList} 
+                    kegListToDisplay={this.state.masterTapList} 
+                    location={this.props.location.pathname}
+                    onShowingForm={this.handleShowingForm}
+                    onHidingForm={this.handleHidingForm}/> }/> 
                 <Route component={Error404}/>
               </Switch>
             </section>

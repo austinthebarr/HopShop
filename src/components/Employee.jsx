@@ -4,16 +4,22 @@ import KegForm from './KegForm';
 import KegList from './KegList';
 
 const Employee = (props) => {
-  console.log(props.location)
   return(
     <div>
-      <KegList kegListToDisplay={props.kegListToDisplay}/> 
+      <KegList
+        kegListToDisplay={props.kegListToDisplay} 
+        location={props.location}
+        onShowingForm={props.onShowingForm}
+        onHidingForm={props.onHidingForm}/> 
       <KegForm onAddingKegToList={props.onAddingKegToList}/>
     </div>);
 };
 
 Employee.propTypes = {
   onAddingKegToList: PropTypes.func.isRequired,
-  kegListToDisplay: PropTypes.object.isRequired
+  kegListToDisplay: PropTypes.object.isRequired,
+  location: PropTypes.string.isRequired,
+  onShowingForm: PropTypes.func.isRequired,
+  onHidingForm: PropTypes.func.isRequired
 };
 export default Employee;

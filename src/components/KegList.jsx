@@ -8,9 +8,12 @@ import Beer from '../assets/images/beer.jpeg';
 
 const KegList = (props) => {
   return (
-    <div className=''>
+    <div>
       <Header 
-        title='Beer Selection'/>
+        location={props.location}
+        title='Beer Selection'
+        onShowingForm={props.onShowingForm}
+        onHidingForm={props.onHidingForm} />
       <div className='container flex'>
         <style jsx>{`
           .flex{
@@ -44,7 +47,10 @@ const KegList = (props) => {
 };
 
 KegList.propTypes = {
-  kegListToDisplay: PropTypes.object
+  kegListToDisplay: PropTypes.object,
+  location: PropTypes.string,
+  onShowingForm: PropTypes.func,
+  onHidingForm: PropTypes.func
 };
 
 export default KegList;

@@ -53,7 +53,7 @@ const KegForm = (props) => {
           id='available'
           placeholder='available'
           ref={(input) => {_available = input;}}/>
-        <button className='btn btn-success' type='submit'>Help!</button>
+        <button className='btn btn-danger' type='submit'>Add New Keg</button>
       </form>
     </div>
   );

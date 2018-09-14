@@ -15,14 +15,62 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      masterTapList: {},
+      masterTapList: {
+        '1': {
+          brew: 'Ruby Zozzle',
+          brewery: 'Hi-Wheel',
+          type: 'Sparkling Wine & Grapefruit',
+          abv: '6.8%',
+          price: '7',
+          availble: '20'
+        },
+        '2': {
+          brew: 'Tart N Juicy',
+          brewery: 'Epic',
+          type: 'Sour IPA',
+          abv: '4.5%',
+          price: '6',
+          availble: '60'
+        },
+        '3': {
+          brewery: 'Miller/Coors',
+          type: 'American Lager',
+          abv: '4.7%',
+          price: '3',
+          availble: '65'
+        },
+        '4': {
+          brew: 'Prismatic',
+          brewery: 'Ninkasi',
+          type: 'Juicy IPA',
+          abv:  '5.9%',
+          price: '6',
+          availble: '75'
+        },
+        '5': {
+          brew: 'Juicy Haze',
+          brewery: 'New Belgium',
+          type: 'India Pale Ale',
+          abv:  '7.5%',
+          price: '6',
+          availble: '18'
+        },
+        '6': {
+          brew: '8 Hop',
+          brewery: 'New Belgium',
+          type: 'Pale Ale',
+          abv:  '5.5%',
+          price: '6',
+          availble: '58'
+        }
+      },
     };
     this.handleAddingKegToList = this.handleAddingKegToList.bind(this);
   }
   
   handleAddingKegToList(newKeg){
     let newKegId = v4();
-    let newMasterTapList = Object.assign({}, this.state.masterTapList, {[newKegId]: newKeg});  
+    let newMasterTapList = Object.assign({}, this.state.masterTapList, {[newKegId]: newKeg});
     this.setState({ masterTapList : newMasterTapList});
   }
 

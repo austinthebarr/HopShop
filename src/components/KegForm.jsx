@@ -23,7 +23,7 @@ const KegForm = (props) => {
   return(
   
     <div className='body'>
-    <style jsx>{`
+      <style jsx>{`
     .body{
     margin: 25% auto;
     width: 50%;
@@ -84,7 +84,7 @@ const KegForm = (props) => {
               ref={(input) => {_available = input;}}/>
           </div> 
           <div className='col-md-3'>
-             <hr/>
+            <hr/>
             <button className='btn btn-danger' type='submit'>Add New Keg</button>
           </div>
         </div> 

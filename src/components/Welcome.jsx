@@ -27,6 +27,8 @@ const Welcome = () => {
       <div className='center'>
         <h1 className='style'>Welcome to HOPSHOP</h1>
         <Link to='/offerings'><button className=' btn btn-danger'>Enter</button></Link>
+        <hr/>
+        <Link to='/BarKeeper'><button className=' btn btn-danger'>BarKeeper</button></Link>
       </div>
     </div>
   );
